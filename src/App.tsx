@@ -1,16 +1,26 @@
-import React from "react";
+import { useEffect } from "react";
+import { ConfigProvider, Spin } from "antd";
 import { useTranslation } from "react-i18next";
+import { usePromiseTracker } from "react-promise-tracker";
+
 import "./App.css";
+import "antd/dist/antd.css";
+import { AppRouter } from "./App.router";
 
 const App = () => {
-  const { t, i18n } = useTranslation(["common"]);
+  const { i18n } = useTranslation();
+  const { promiseInProgress } = usePromiseTracker();
+
+  /** This useEffect rerenders dir */
+  useEffect(() => {}, [i18n.language]);
+
   return (
-    <div className="App">
-      {t("HEMO")}
-      <button onClick={() => i18n.changeLanguage("ar")}>Arabic</button>
-      <button onClick={() => i18n.changeLanguage("en")}>English</button>
-    </div>
+    /* This wrapper handles rtl and ltr directions for i18n */
+    <ConfigProvider direction={i18n.dir()}>
+      <AppRouter />
+      <Spin spinning={promiseInProgress} />
+    </ConfigProvider>
   );
 };
 
-export default App;
+export { App };
