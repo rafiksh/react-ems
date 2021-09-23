@@ -1,14 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { I18nextProvider } from "react-i18next";
 
 import "./index.css";
-import App from "&features/App";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import i18n from "&config/i18n";
 
 ReactDOM.render(
-  <React.StrictMode>
+  /* Configures i18n */
+  <I18nextProvider i18n={i18n}>
     <App />
-  </React.StrictMode>,
+  </I18nextProvider>,
   document.getElementById("root")
 );
 
