@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+# React Redux Employee Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This is a React.js template fully written in Typescript. The template is based on [Redux](https://redux.js.org/) for global state management, following the "features" or "ducks" pattern. This pattern enforces that all files for a feature are in the same folder, and that all Redux logic for a feature is in a single file. As a result, the template omits the old component-container pattern resulting in smaller chunks of code, significantly less file count, easier debugging and limited use of parent-child props.
 
-In the project directory, you can run:
+## Commands
 
-### `yarn start`
+|    command     |                         action                         |
+| :------------: | :----------------------------------------------------: |
+| `yarn install` |             Downloads project dependencies             |
+|  `yarn start`  |          Runs the app in the development mode          |
+|  `yarn test`   | Launches the test runner in the interactive watch mode |
+|  `yarn build`  |   Builds the app for production to the build folder    |
+|  `yarn serve`  |    Starts a static server to serve production build    |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Production
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Web:
 
-### `yarn test`
+  - run `yarn build` to perform production build. Build files will be generated in a new directory `/build`.
+  - run `yarn serve` to serve production build locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Structure
 
-### `yarn build`
+The project root directory structure is as follows:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+  '|-- <root>',
+  '    |-- cli',
+  '    |-- public',
+  '    |-- readme',
+  '    |-- src',
+  '        |-- assets',
+  '        |-- config',
+  '        |-- features',
+  '        |   |-- core',
+  '        |   |-- employees',
+  '        |-- locales',
+  '        |-- store',
+  '        |-- styled',
+  '        |-- utils',
+  ''
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As mentioned before, following the "features" or "ducks" pattern organizes the folders in the following manner:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [`/public`](public) for public files
+- [`/readme`](readme) for assets used in [`README.md`](README.md)
+- [`/src`](src) for all source files
+- [`src/assets`](src/assets) for assets (.png, .svg, etc ...)
+- [`src/config`](src/config) for configuration files (colors, headers, strings, etc ...)
+- [`src/features`](src/features) for project features (core, employees, dashboard, settings ...)
+- [`src/locales`](src/locales) for i18n localization files (en, ar ...)
+- [`src/store`](src/store) for redux configurations (combineReducers, middleware, persist etc ...)
+- [`src/styled`](src/styled) for multiple use stateless styled components
+- [`src/utils`](src/utils) for utils used throughout the project
 
-### `yarn eject`
+### path alias
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The template supports path aliases to shorten `import` statements. Ex : for accessing a deeply nested module from another, use `&<some module>/<some file>` instead of `../../<some module>/<some file>` and so on.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For adding new path aliases, follow these two steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Add `"&<your alias>/*": ["path/to/your/alias/*"]` in [`tsconfig.paths.json`](tsconfig.paths.json)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Add `"&<your alias>": path.resolve(__dirname, "path/to/your/alias")` in [`config-overrides.js`](config-overrides.js)
 
-## Learn More
+Note:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- You can remove or replace "&" symbol with any other symbol, but make sure to be consistent.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Reload or restart your IDE or text editor for configurations to appear.
+
+## Project Features
+
+- [Typescript](https://www.typescriptlang.org/) for scalability, code clarity, ease of debugging, etc ...
+- [redux-toolkit](https://redux-toolkit.js.org/) toolset for efficient Redux development
+- [redux-persist](https://github.com/rt2zz/redux-persist) to persist and rehydrate Redux store
+- [react-i18next](https://react.i18next.com/) for internationalization and localization
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start) for routing, with
+- [redux-first-history](https://github.com/salvoravida/redux-first-history) middleware
+- [ant-design](https://ant.design/) for responsive high quality reusable components and forms
+- fully functional components
+- path aliases to reduce import statements' length
