@@ -15,8 +15,6 @@ let en = {
     NEW: "New",
     EDIT: "Edit",
     DELETE: "Delete",
-
-    SEARCH_PLACEHOLDER: "",
   },
 };
 

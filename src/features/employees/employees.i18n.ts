@@ -31,6 +31,29 @@ export const employeesNameSpace = {
       "Search by FirstName, LastName, Email, PhoneNumber, or Job Title",
   },
   ar: {
-    // Write Arabic key-mapping here
+    FIRST_NAME: "الاسم الأول",
+    LAST_NAME: "اسم العائلة",
+    EMAIL: "بريد إلكتروني",
+    PHONE_NUMBER: "رقم الهاتف",
+    JOB_TITLE: "المسمى الوظيفي",
+    ADD_EMPLOYEE: "موظف جديد",
+    EMPLOYEE_ID: "معرف الموظف: {{id}}",
+
+    FIRST_NAME_PLACEHOLDER: "جون",
+    LAST_NAME_PLACEHOLDER: "Doe",
+    EMAIL_PLACEHOLDER: "someone@example.com",
+    PHONE_NUMBER_PLACEHOLDER: "03112233",
+    JOB_TITLE_PLACEHOLDER: "مهندس",
+
+    EMPLOYEE_ADDED: "تمت إضافة موظف جديد بنجاح.",
+    EMPLOYEE_UPDATED: "تم تحديث الموظف بنجاح.",
+    EMPLOYEE_DELETED: "تم حذف الموظف بنجاح.",
+    EMPLOYEE_GET_ERROR: "حدث خطأ أثناء الحصول على موظفين.",
+    EMPLOYEE_ADDED_ERROR: "حدث خطأ أثناء إضافة موظف جديد.",
+    EMPLOYEE_UPDATED_ERROR: "حدث خطأ أثناء تحديث الموظف.",
+    EMPLOYEE_DELETED_ERROR: "حدث خطأ أثناء حذف الموظف.",
+
+    SEARCH_PLACEHOLDER:
+      "البحث بالاسم الأول أو اسم العائلة أو البريد الإلكتروني أو رقم الهاتف أو المسمى الوظيفي",
   },
 };

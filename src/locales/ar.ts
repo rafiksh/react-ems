@@ -8,7 +8,14 @@ let ar = {
   /** Features namespace */
   employees: employeesNameSpace.ar,
 
-  common: {},
+  common: {
+    MAIN: "Main",
+    EMPLOYEES: "الموظفون",
+    SETTINGS: "الإعدادات",
+    NEW: "جديد",
+    EDIT: "تحرير",
+    DELETE: "حذف",
+  },
 };
 
 export default ar;
