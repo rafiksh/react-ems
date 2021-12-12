@@ -1,5 +1,7 @@
 # React Redux Employee Management System
 
+## LIVE DEMO https://rafik-ems.netlify.app/
+
 ## Description
 
 This is a React.js template fully written in Typescript. The template is based on [Redux](https://redux.js.org/) for global state management, following the "features" or "ducks" pattern. This pattern enforces that all files for a feature are in the same folder, and that all Redux logic for a feature is in a single file. As a result, the template omits the old component-container pattern resulting in smaller chunks of code, significantly less file count, easier debugging and limited use of parent-child props.
