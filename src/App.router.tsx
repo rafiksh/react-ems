@@ -1,19 +1,18 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router";
+import { connect, ConnectedProps } from "react-redux";
 
-const AppRouter = () => {
+import { history, RootState } from "&store/store";
+import { EmployeesComponent } from "&features/employees/employees.component";
+
+type ReduxProps = ConnectedProps<typeof connector>;
+
+const AppRouter = (props: ReduxProps) => {
   return (
-    <Router>
+    <Router history={history}>
       {/* App main routing switch */}
       <Switch>
         {/* TODO remove the coming demo routes and add your's */}
-        <Route exact path="/" component={() => <>home</>} />
-        <Route exact path="/hi" component={() => <>hi</>} />
-        <Route exact path="/bye" component={() => <>bye</>} />
+        <Route exact path="/" component={() => <EmployeesComponent />} />
 
         {/* TODO This block handles unmatched routes. Add your custom 404 component */}
         <Route path="/404" render={() => <div>page not found</div>} />
@@ -23,4 +22,17 @@ const AppRouter = () => {
   );
 };
 
-export { AppRouter };
+const mapStateToProps = (state: RootState) => ({});
+
+/**
+ * Maps actions from slices to props
+ */
+const mapDispatchToProps = {};
+
+/**
+ * Connects component to redux store
+ */
+const connector = connect(mapStateToProps, mapDispatchToProps);
+const AppRouteRedux = connector(AppRouter);
+
+export { AppRouteRedux as AppRouter };
