@@ -92,6 +92,7 @@ td {
 }
 .ant-table-content {
   height: 100%;
+  overflow: visible !important;
 }
 
 .ant-table-rtl .ant-table-cell-fix-left-first {
