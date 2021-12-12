@@ -8,7 +8,8 @@
       "&assets/*": ["./src/assets/*"],
       "&route/*": ["./src/route/*"],
       "&locales/*": ["./src/locales/*"],
-      "&utils/*": ["./src/utils/*"]
+      "&utils/*": ["./src/utils/*"],
+      "&store/*": ["./src/store/*"]
     }
   }
 }
