@@ -1,8 +1,8 @@
 {
-  "name": "react-template-typescript",
+  "name": "react-ems",
   "version": "0.1.0",
   "author": "rafiksh",
-  "description": "Reactjs Typescript Template",
+  "description": "Reactjs Employee Management System",
   "private": true,
   "homepage": "./",
   "dependencies": {
