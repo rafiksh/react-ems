@@ -1,12 +1,22 @@
+import { employeesNameSpace } from "&features/employees/employees.i18n";
+
 /**
  * English translation resources.
  * Each object correspond to a namespace related to a feature.
  */
 let en = {
-  /** landing namespace */
-  // landing: landingNameSpace.en,
+  /** Features namespace */
+  employees: employeesNameSpace.en,
+
   common: {
-    HEMO: "Hemo",
+    MAIN: "Main",
+    EMPLOYEES: "Employees",
+    SETTINGS: "Settings",
+    NEW: "New",
+    EDIT: "Edit",
+    DELETE: "Delete",
+
+    SEARCH_PLACEHOLDER: "",
   },
 };
 
